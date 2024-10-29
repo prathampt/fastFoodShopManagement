@@ -10,13 +10,27 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`${API_BASE_URL}/persons`)
             .then(response => response.json())
             .then(persons => {
-                personsTable.innerHTML = '';
+                personsTable.innerHTML = `
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Contact</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                `;
                 persons.forEach(person => {
-                    const row = document.createElement('div');
+                    const row = document.createElement('tr');
                     row.innerHTML = `
-                        <p>ID: ${person.id}, Name: ${person.name}, Age: ${person.age}, Gender: ${person.gender}, Contact: ${person.contact}</p>
-                        <button onclick="editPerson(${person.id})">Edit</button>
-                        <button onclick="deletePerson(${person.id})">Delete</button>
+                        <td>${person.id}</td>
+                        <td>${person.name}</td>
+                        <td>${person.age}</td>
+                        <td>${person.gender}</td>
+                        <td>${person.contact}</td>
+                        <td><button onclick="editPerson(${person.id})">Edit</button></td>
+                        <td><button onclick="deletePerson(${person.id})">Delete</button></td>
                     `;
                     personsTable.appendChild(row);
                 });
@@ -77,13 +91,23 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`${API_BASE_URL}/customers`)
             .then(response => response.json())
             .then(customers => {
-                customersTable.innerHTML = '';
+                customersTable.innerHTML = `
+                    <tr>
+                        <th>ID</th>
+                        <th>Customer Name</th>
+                        <th>Person ID</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                `;
                 customers.forEach(customer => {
-                    const row = document.createElement('div');
+                    const row = document.createElement('tr');
                     row.innerHTML = `
-                        <p>ID: ${customer.id}, Customer Name: ${customer.name}, Person ID: ${customer.person_id}</p>
-                        <button onclick="editCustomer(${customer.id})">Edit</button>
-                        <button onclick="deleteCustomer(${customer.id})">Delete</button>
+                        <td>${customer.id}</td>
+                        <td>${customer.name}</td>
+                        <td>${customer.person_id}</td>
+                        <td><button onclick="editCustomer(${customer.id})">Edit</button></td>
+                        <td><button onclick="deleteCustomer(${customer.id})">Delete</button></td>
                     `;
                     customersTable.appendChild(row);
                 });
@@ -138,13 +162,25 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`${API_BASE_URL}/fooditems`)
             .then(response => response.json())
             .then(foodItems => {
-                foodItemsTable.innerHTML = '';
+                foodItemsTable.innerHTML = `
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Availablility</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                `;
                 foodItems.forEach(foodItem => {
-                    const row = document.createElement('div');
+                    const row = document.createElement('tr');
                     row.innerHTML = `
-                        <p>ID: ${foodItem.id}, Name: ${foodItem.name}, Price: ${foodItem.price}, Availablility: ${foodItem.availability}</p>
-                        <button onclick="editFoodItem(${foodItem.id})">Edit</button>
-                        <button onclick="deleteFoodItem(${foodItem.id})">Delete</button>
+                        <td>${foodItem.id}</td>
+                        <td>${foodItem.name}</td>
+                        <td>${foodItem.price}</td>
+                        <td>${foodItem.availability}</td>
+                        <td><button onclick="editFoodItem(${foodItem.id})">Edit</button></td>
+                        <td><button onclick="deleteFoodItem(${foodItem.id})">Delete</button></td>
                     `;
                     foodItemsTable.appendChild(row);
                 });
@@ -203,13 +239,25 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`${API_BASE_URL}/employees`)
             .then(response => response.json())
             .then(employees => {
-                employeesTable.innerHTML = '';
+                employeesTable.innerHTML = `
+                    <tr>
+                        <th>ID</th>
+                        <th>Employee Name</th>
+                        <th>Shift</th>
+                        <th>Role</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                `;
                 employees.forEach(employee => {
-                    const row = document.createElement('div');
+                    const row = document.createElement('tr');
                     row.innerHTML = `
-                        <p>ID: ${employee.id}, Employee Name: ${employee.name}, Shift: ${employee.shift}, Role: ${employee.role}</p>
-                        <button onclick="editEmployee(${employee.id})">Edit</button>
-                        <button onclick="deleteEmployee(${employee.id})">Delete</button>
+                        <td>${employee.id}</td>
+                        <td>${employee.name}</td>
+                        <td>${employee.shift}</td>
+                        <td>${employee.role}</td>
+                        <td><button onclick="editEmployee(${employee.id})">Edit</button></td>
+                        <td><button onclick="deleteEmployee(${employee.id})">Delete</button></td>
                     `;
                     employeesTable.appendChild(row);
                 });
@@ -267,13 +315,27 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`${API_BASE_URL}/orders`)
             .then(response => response.json())
             .then(orders => {
-                ordersTable.innerHTML = '';
+                ordersTable.innerHTML = `
+                    <tr>
+                        <th>ID</th>
+                        <th>Order ID</th>
+                        <th>Customer ID</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                `;
                 orders.forEach(order => {
-                    const row = document.createElement('div');
+                    const row = document.createElement('tr');
                     row.innerHTML = `
-                        <p>ID: ${order.id}, Order ID: ${order.id}, Customer ID: ${order.customer_id}, Date: ${order.order_date}, Time: ${order.order_time}</p>
-                        <button onclick="editOrder(${order.id})">Edit</button>
-                        <button onclick="deleteOrder(${order.id})">Delete</button>
+                        <td>${order.id}</td>
+                        <td>${order.id}</td>
+                        <td>${order.customer_id}</td>
+                        <td>${order.order_date}</td>
+                        <td>${order.order_time}</td>
+                        <td><button onclick="editOrder(${order.id})">Edit</button></td>
+                        <td><button onclick="deleteOrder(${order.id})">Delete</button></td>
                     `;
                     ordersTable.appendChild(row);
                 });
@@ -332,13 +394,25 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`${API_BASE_URL}/orderdetails`)
             .then(response => response.json())
             .then(orderDetails => {
-                orderDetailsTable.innerHTML = '';
+                orderDetailsTable.innerHTML = `
+                    <tr>
+                        <th>ID</th>
+                        <th>Order ID</th>
+                        <th>Food ID</th>
+                        <th>Quantity</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                `;
                 orderDetails.forEach(detail => {
-                    const row = document.createElement('div');
+                    const row = document.createElement('tr');
                     row.innerHTML = `
-                        <p>ID: ${detail.id}, Order ID: ${detail.order_id}, Food ID: ${detail.food_id}, Quantity: ${detail.quantity}</p>
-                        <button onclick="editOrderDetails(${detail.id})">Edit</button>
-                        <button onclick="deleteOrderDetails(${detail.id})">Delete</button>
+                        <td>${detail.id}</td>
+                        <td>${detail.order_id}</td>
+                        <td>${detail.food_id}</td>
+                        <td>${detail.quantity}</td>
+                        <td><button onclick="editOrderDetails(${detail.id})">Edit</button></td>
+                        <td><button onclick="deleteOrderDetails(${detail.id})">Delete</button></td>
                     `;
                     orderDetailsTable.appendChild(row);
                 });
@@ -396,13 +470,27 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`${API_BASE_URL}/payments`)
             .then(response => response.json())
             .then(payments => {
-                paymentsTable.innerHTML = '';
+                paymentsTable.innerHTML = `
+                    <tr>
+                        <th>ID</th>
+                        <th>Payment ID</th>
+                        <th>Order ID</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                `;
                 payments.forEach(payment => {
-                    const row = document.createElement('div');
+                    const row = document.createElement('tr');
                     row.innerHTML = `
-                        <p>ID: ${payment.id}, Payment ID: ${payment.id}, Order ID: ${payment.order_id}, Type: ${payment.payment_type}, Amount: ${payment.total_amount}</p>
-                        <button onclick="editPayment(${payment.id})">Edit</button>
-                        <button onclick="deletePayment(${payment.id})">Delete</button>
+                        <td>${payment.id}</td>
+                        <td>${payment.id}</td>
+                        <td>${payment.order_id}</td>
+                        <td>${payment.payment_type}</td>
+                        <td>${payment.total_amount}</td>
+                        <td><button onclick="editPayment(${payment.id})">Edit</button></td>
+                        <td><button onclick="deletePayment(${payment.id})">Delete</button></td>
                     `;
                     paymentsTable.appendChild(row);
                 });

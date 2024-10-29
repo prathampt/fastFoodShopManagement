@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,124 +8,127 @@
     <link rel="stylesheet" href="styles.css" />
     <script defer src="app.js"></script>
 </head>
+
 <body>
     <header>
         <h1>Fast Food Shop Management</h1>
     </header>
 
-    <!-- Person Form -->
-    <section class="form-section">
-        <h2>Add New Person</h2>
-        <form id="person-form">
-            <input type="text" id="name" placeholder="Name" required />
-            <input type="number" id="age" placeholder="Age" required />
-            <input type="text" id="gender" placeholder="Gender" required />
-            <input type="text" id="contact" placeholder="Contact" required />
-            <button type="submit" class="btn">Add Person</button>
-        </form>
-    </section>
-
-    <!-- Customer Form -->
-    <section class="form-section">
-        <h3>Add New Customer</h3>
-        <form id="customer-form">
-            <input type="number" id="customer-person-id" placeholder="Person ID" required />
-            <button type="submit" class="btn">Add Customer</button>
-        </form>
-    </section>
-
-    <!-- Food Item Form -->
-    <section class="form-section">
-        <h3>Add New Food Item</h3>
-        <form id="foodItemForm">
-            <label for="foodName">Name:</label>
-            <input type="text" id="foodName" required /><br />
-            <label for="foodPrice">Price:</label>
-            <input type="number" id="foodPrice" required /><br />
-            <label for="foodAvailability">Availability:</label>
-            <select id="foodAvailability">
-                <option value="true">Available</option>
-                <option value="false">Not Available</option>
-            </select><br />
-            <button type="submit" class="btn">Add Food Item</button>
-        </form>
-    </section>
-
-    <!-- Employee Form -->
-    <section class="form-section">
-        <h3>Add New Employee</h3>
-        <form id="employee-form">
-            <input type="number" id="employee-person-id" placeholder="Person ID" required />
-            <input type="text" id="shift" placeholder="Shift" required />
-            <input type="text" id="role" placeholder="Role" required />
-            <button type="submit" class="btn">Add Employee</button>
-        </form>
-    </section>
-
-    <!-- Order Form -->
-    <section class="form-section">
-        <h3>Add New Order</h3>
-        <form id="order-form">
-            <input type="number" id="customer-id" placeholder="Customer ID" required />
-            <input type="date" id="order-date" required />
-            <input type="time" id="order-time" required />
-            <button type="submit" class="btn">Add Order</button>
-        </form>
-    </section>
-
-    <!-- Order Details Form -->
-    <section class="form-section">
-        <h3>Add New Order Details</h3>
-        <form id="orderDetails-form">
-            <input type="number" id="order-id" placeholder="Order ID" required />
-            <input type="number" id="food-id" placeholder="Food ID" required />
-            <input type="number" id="quantity" placeholder="Quantity" required />
-            <button type="submit" class="btn">Add Order Details</button>
-        </form>
-    </section>
-
-    <!-- Payment Form -->
-    <section class="form-section">
-        <h3>Add New Payment</h3>
-        <form id="payment-form">
-            <input type="number" id="payment-order-id" placeholder="Order ID" required />
-            <input type="text" id="payment-type" placeholder="Payment Type" required />
-            <input type="number" id="total-amount" placeholder="Total Amount" required />
-            <button type="submit" class="btn">Add Payment</button>
-        </form>
-    </section>
-
-    <!-- Tables for displaying data -->
-    <section class="tables-section">
-        <h2>Data Tables</h2>
-        <div class="data-table" id="persons-table">
-            <h3>Persons</h3>
-            <!-- Data will be populated here -->
+    <div class="container">
+        <div class="table-form-pair">
+            <div class="data-table">
+                <h2>Persons</h2>
+                <table id="persons-table"></table>
+            </div>
+            <div class="form-section">
+                <h3>Add New Person</h3>
+                <form id="person-form">
+                    <input type="text" id="name" placeholder="Name" required />
+                    <input type="number" id="age" placeholder="Age" required />
+                    <input type="text" id="gender" placeholder="Gender" required />
+                    <input type="text" id="contact" placeholder="Contact" required />
+                    <button type="submit" class="btn">Add Person</button>
+                </form>
+            </div>
         </div>
-        <div class="data-table" id="customers-table">
-            <h3>Customers</h3>
-            <!-- Data will be populated here -->
+
+        <div class="table-form-pair">
+            <div class="data-table">
+                <h2>Customers</h2>
+                <table id="customers-table"></table>
+            </div>
+            <div class="form-section">
+                <h3>Add New Customer</h3>
+                <form id="customer-form">
+                    <input type="number" id="customer-person-id" placeholder="Person ID" required />
+                    <button type="submit" class="btn">Add Customer</button>
+                </form>
+            </div>
         </div>
-        <div class="data-table" id="food-items-table">
-            <h3>Food Items</h3>
-            <!-- Data will be populated here -->
+
+        <div class="table-form-pair">
+            <div class="data-table">
+                <h2>Food Items</h2>
+                <table id="food-items-table"></table>
+            </div>
+            <div class="form-section">
+                <h3>Add New Food Item</h3>
+                <form id="foodItemForm">
+                    <input type="text" id="foodName" placeholder="Name" required />
+                    <input type="number" id="foodPrice" placeholder="Price" required />
+                    <select id="foodAvailability">
+                        <option value="true">Available</option>
+                        <option value="false">Not Available</option>
+                    </select>
+                    <button type="submit" class="btn">Add Food Item</button>
+                </form>
+            </div>
         </div>
-        <div class="data-table" id="employees-table">
-            <h3>Employees</h3>
-            <!-- Data will be populated here -->
+
+        <div class="table-form-pair">
+            <div class="data-table">
+                <h2>Employees</h2>
+                <table id="employees-table"></table>
+            </div>
+            <div class="form-section">
+                <h3>Add New Employee</h3>
+                <form id="employee-form">
+                    <input type="number" id="employee-person-id" placeholder="Person ID" required />
+                    <input type="text" id="shift" placeholder="Shift" required />
+                    <input type="text" id="role" placeholder="Role" required />
+                    <button type="submit" class="btn">Add Employee</button>
+                </form>
+            </div>
         </div>
-        <div class="data-table" id="orders-table">
-            <h3>Orders</h3>
-            <!-- Data will be populated here -->
+
+        <div class="table-form-pair">
+            <div class="data-table">
+                <h2>Orders</h2>
+                <table id="orders-table"></table>
+            </div>
+            <div class="form-section">
+                <h3>Add New Order</h3>
+                <form id="order-form">
+                    <input type="number" id="customer-id" placeholder="Customer ID" required />
+                    <input type="date" id="order-date" required />
+                    <input type="time" id="order-time" required />
+                    <button type="submit" class="btn">Add Order</button>
+                </form>
+            </div>
         </div>
-        <div class="data-table" id="order-details-table">
-            <h3>Order Details</h3>
-            <!-- Data will be populated here -->
+
+        <div class="table-form-pair">
+            <div class="data-table">
+                <h2>Order Details</h2>
+                <table id="order-details-table"></table>
+            </div>
+            <div class="form-section">
+                <h3>Add New Order Details</h3>
+                <form id="orderDetails-form">
+                    <input type="number" id="order-id" placeholder="Order ID" required />
+                    <input type="number" id="food-id" placeholder="Food ID" required />
+                    <input type="number" id="quantity" placeholder="Quantity" required />
+                    <button type="submit" class="btn">Add Order Details</button>
+                </form>
+            </div>
         </div>
-        <div class="data-table" id="payments-table">
-            <h3>Payments</h3>
-            <!-- Data will be populated here -->
+
+        <div class="table-form-pair">
+            <div class="data-table">
+                <h2>Payments</h2>
+                <table id="payments-table"></table>
+            </div>
+            <div class="form-section">
+                <h3>Add New Payment</h3>
+                <form id="payment-form">
+                    <input type="number" id="payment-order-id" placeholder="Order ID" required />
+                    <input type="text" id="payment-type" placeholder="Payment Type" required />
+                    <input type="number" id="total-amount" placeholder="Total Amount" required />
+                    <button type="submit" class="btn">Add Payment</button>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
 </body>
+
 </html>

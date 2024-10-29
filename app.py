@@ -107,7 +107,7 @@ def get_fooditems():
 @app.route('/fooditems', methods=['POST'])
 def add_fooditem():
     data = request.get_json()
-    new_fooditem = FoodItem(name=data['name'], price=data['price'], availability=data['availability'])
+    new_fooditem = FoodItem(name=data['name'], price=data['price'], availability=True if data['availability'] == 'true' else False)
     db.session.add(new_fooditem)
     db.session.commit()
     return jsonify({"message": "FoodItem added successfully"})
